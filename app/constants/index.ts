@@ -5,7 +5,7 @@ export const movies = [
     Year: "2009",
     Rated: "PG-13",
     Released: "18 Dec 2009",
-    Runtime: "162 min",
+    Runtime: "2h 66min",
     Genre: "Action, Adventure, Fantasy",
     Director: "James Cameron",
     Writer: "James Cameron",
@@ -535,4 +535,22 @@ export const movies = [
       "https://example.com/matrix_image3.jpg",
     ],
   },
+];
+
+export const footdata = [
+  "FAQ",
+  "HelpCentre",
+  "Account",
+  "Media Centre",
+  "InvestorRelations",
+  "Jobs",
+  "Ways to Watch",
+  "Terms of Use",
+  "Privacy",
+  "Cookie Preferences",
+  "Corporate Information",
+  "Contact Us",
+  "Speed Test ",
+  "Legal Notices ",
+  "Only on Netflix",
 ];

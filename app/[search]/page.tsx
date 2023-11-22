@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { movies } from "../constants";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Movie {
   Title: string;
@@ -22,20 +23,28 @@ interface Movie {
 export default function Page({ params }: { params: { search: string } }) {
   const searchTerm = params.search.toLowerCase(); // Convert search term to lowercase
 
-  const searchResults = movies.filter((movie: Movie) =>
-    Object.values(movie)
-      .map((value) => String(value).toLowerCase()) // Convert all values to lowercase strings
-      .some((lowercaseValue) => lowercaseValue.includes(searchTerm))
+  const searchResults = movies.filter(
+    (movie: Movie) =>
+      Object.values(movie)
+        .map((value) => String(value).toLowerCase()) // Convert all values to lowercase strings
+        .some((lowercaseValue) => lowercaseValue.includes(searchTerm)) //returns true if there is included else false
   );
 
-  const [vid, setVid] = useState<string | undefined>("");
+  const [vid, setVid] = useState<string | undefined>(
+    searchTerm == "watch%20avatar" ? "5PSNL1qE6VY" : ""
+  );
+  const route = useRouter();
+
   return (
     <div className="bg-zinc-900 min-h-screen text-white px-10 pt-20">
       <div className="max-w-screen-2xl mx-auto">
-        <h1 className="text-3xl py-5 ">Search results for: {params.search}</h1>
-        {searchResults.length === 0 && (
+        <h1 className="text-3xl py-5 ">
+          {" "}
+          {params.search.replaceAll("%20", " ")}
+        </h1>
+        {searchResults.length === 0 && searchTerm !== "watch%20avatar" && (
           <h1 className="p-5 mt-5 font-semibold text-black bg-white rounded-md m-auto">
-            Not Found
+            Search result Not Found
           </h1>
         )}
         {vid && (
@@ -43,7 +52,9 @@ export default function Page({ params }: { params: { search: string } }) {
             <button
               className="bg-black/20 text-white float-right text-3xl p-2 hover:text-black hover:bg-slate-300 flex items-center justify-center mb-2
               me-5"
-              onClick={() => setVid("")}
+              onClick={() =>
+                searchTerm == "watch%20avatar" ? route.push("/") : setVid("")
+              }
             >
               close
             </button>
