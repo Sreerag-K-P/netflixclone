@@ -2,20 +2,24 @@
 import Image from "next/image";
 import { movies } from "../constants";
 import { useState } from "react";
-import Link from "next/link";
+
 type prop = {
   title?: string;
 };
 
 const Rowposts = ({ title }: prop) => {
   const [vid, setVid] = useState<string | undefined>("");
+
   return (
-    <div className="text-white ps-10">
+    <div className="text-white px-10">
       <h2 className="my-3 font-extrabold">
         {title ? title : "Netflix originals"}
       </h2>
       <div className="relative flex items-center">
-        <div className="scroll w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth">
+        <div
+          id="slider"
+          className="scroll w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth"
+        >
           {movies.map((movie) => (
             <div
               key={movie.Title}
