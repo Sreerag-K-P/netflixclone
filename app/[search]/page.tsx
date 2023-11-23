@@ -3,6 +3,7 @@ import { useState } from "react";
 import { movies } from "../constants";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 interface Movie {
   Title: string;
@@ -50,13 +51,13 @@ export default function Page({ params }: { params: { search: string } }) {
         {vid && (
           <div id="video">
             <button
-              className="bg-black/20 text-white float-right text-3xl p-2 hover:text-black hover:bg-slate-300 flex items-center justify-center mb-2
+              className=" text-white float-right text-3xl p-2 hover:opacity-60  flex items-center justify-center mb-2
               me-5"
               onClick={() =>
                 searchTerm == "watch%20avatar" ? route.push("/") : setVid("")
               }
             >
-              close
+              <IoCloseCircleOutline />
             </button>
             <iframe
               className="h-52 sm:h-96 md:h-[30rem] w-full pe-5"
