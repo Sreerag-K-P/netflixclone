@@ -8,7 +8,7 @@ function Footer() {
         <p>Questions? Call 000-800-919-1694 </p>
         <div className="grid grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 mt-8 text-sm">
           {footdata.map((data) => (
-            <p className="py-4" key={data}>
+            <p className="py-4 cursor-pointer" key={data}>
               {data}
             </p>
           ))}

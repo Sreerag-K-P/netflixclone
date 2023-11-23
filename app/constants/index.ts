@@ -425,7 +425,8 @@ export const movies = [
     Language: "English",
     Country: "USA",
     Awards: "1 nomination.",
-    Poster: "https://contentserver.com.au/assets/491605_p11597968_p_v8_ab.jpg",
+    Poster:
+      "https://m.media-amazon.com/images/I/91M4MJ-vyUL._AC_UL480_FMwebp_QL65_.jpg",
     Metascore: "N/A",
     imdbRating: "N/A",
     imdbVotes: "N/A",
