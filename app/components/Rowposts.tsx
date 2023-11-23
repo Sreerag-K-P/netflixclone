@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { movies } from "../constants";
 import { useState } from "react";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 type prop = {
   title?: string;
@@ -57,11 +58,11 @@ const Rowposts = ({ title }: prop) => {
       {vid && (
         <div id="video">
           <button
-            className="bg-black/20 text-white float-right text-3xl p-2 hover:text-black hover:bg-slate-300 flex items-center justify-center mb-2
+            className=" text-white float-right text-3xl p-2 hover:opacity-60 flex items-center justify-center mb-2
               me-5"
             onClick={() => setVid("")}
           >
-            close
+            <IoCloseCircleOutline />
           </button>
           <iframe
             className="h-52 sm:h-96 md:h-[30rem] w-full pe-5"

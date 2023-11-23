@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full -mt-20 h-[40rem]  text-white relative ">
+    <div className="w-full -mt-16 h-[40rem] text-white relative">
       <Image
         src={movies[0].Images[3]}
         alt="bannerimg"
