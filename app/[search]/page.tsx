@@ -36,7 +36,7 @@ export default function Page({ params }: { params: { search: string } }) {
   const route = useRouter();
 
   return (
-    <div className="bg-zinc-900 min-h-screen text-white px-10 pt-20">
+    <div className="bg-zinc-900 min-h-screen text-white px-10 pt-20 -mt-20">
       <div className="max-w-screen-2xl mx-auto">
         <h1 className="text-3xl py-5 ">
           {" "}

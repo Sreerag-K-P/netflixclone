@@ -9,18 +9,18 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="w-full absolute z-30 flex justify-between items-center bg-black/5 px-9 h-16 ">
-      <Link href="/">
+    <div className="w-full sticky top-0  z-30 flex justify-between items-center bg-black/5 px-9 h-16 ">
+      <Link href="/" className=" max-sm:w-4/12">
         <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
           alt="NetflixLogo"
           width={1920}
           height={40}
-          className="w-28 h-fit "
+          className="w-28 h-fit"
         />
       </Link>
 
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 max-sm:gap-1 items-center">
         <form
           onSubmit={(e) => {
             e.preventDefault();
