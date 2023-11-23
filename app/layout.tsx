@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Netfix",
+  title: "Netflix",
   description: "created by sreerag k p",
 };
 
