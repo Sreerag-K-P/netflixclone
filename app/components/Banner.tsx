@@ -26,7 +26,7 @@ const Banner = () => {
         </div>
 
         <div className=" flex gap-2 text-white">
-          <Link href={`/Watch avatar`}>
+          <Link href={`play/5PSNL1qE6VY`}>
             <button className="outline-none border-none font-bold rounded-md py-2 px-8 bg-slate-400/50 cursor-pointer hover:text-black hover:bg-slate-200">
               Play
             </button>

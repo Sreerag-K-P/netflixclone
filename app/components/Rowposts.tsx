@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
 import { movies } from "../constants";
-import { useState } from "react";
-import { IoCloseCircleOutline } from "react-icons/io5";
+
+import { useRouter } from "next/navigation";
 
 type prop = {
   title?: string;
 };
 
 const Rowposts = ({ title }: prop) => {
-  const [vid, setVid] = useState<string | undefined>("");
-
+  const route = useRouter();
   return (
     <div className="text-white px-10">
       <h2 className="my-3 font-extrabold">
@@ -28,7 +27,10 @@ const Rowposts = ({ title }: prop) => {
             >
               {title ? (
                 movie.Genre.includes(title) && (
-                  <div onClick={() => setVid(movie.vid)} className="px-2">
+                  <div
+                    onClick={() => route.push(`/play/${movie.vid}`)}
+                    className="px-2"
+                  >
                     <Image
                       src={`${movie.Poster}`}
                       width={1024}
@@ -40,7 +42,10 @@ const Rowposts = ({ title }: prop) => {
                   </div>
                 )
               ) : (
-                <div className="px-2" onClick={() => setVid(movie.vid)}>
+                <div
+                  className="px-2"
+                  onClick={() => route.push(`/play/${movie.vid}`)}
+                >
                   <Image
                     src={`${movie.Poster}`}
                     width={1024}
@@ -55,24 +60,6 @@ const Rowposts = ({ title }: prop) => {
           ))}
         </div>
       </div>
-      {vid && (
-        <div id="video">
-          <button
-            className=" text-white float-right text-3xl p-2 hover:opacity-60 flex items-center justify-center mb-2
-              me-5"
-            onClick={() => setVid("")}
-          >
-            <IoCloseCircleOutline />
-          </button>
-          <iframe
-            className="h-52 sm:h-96 md:h-[30rem] w-full pe-5"
-            src={`https://www.youtube.com/embed/${vid}?autoplay=true`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Embedded youtube"
-          />
-        </div>
-      )}
     </div>
   );
 };
