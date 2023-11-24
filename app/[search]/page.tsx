@@ -31,9 +31,7 @@ export default function Page({ params }: { params: { search: string } }) {
         .some((lowercaseValue) => lowercaseValue.includes(searchTerm)) //returns true if there is included else false
   );
 
-  const [vid, setVid] = useState<string | undefined>(
-    searchTerm == "watch%20avatar" ? "5PSNL1qE6VY" : ""
-  );
+  const [vid, setVid] = useState<string | undefined>("");
   const route = useRouter();
 
   return (
@@ -43,7 +41,7 @@ export default function Page({ params }: { params: { search: string } }) {
           {" "}
           {params.search.replaceAll("%20", " ")}
         </h1>
-        {searchResults.length === 0 && searchTerm !== "watch%20avatar" && (
+        {searchResults.length === 0 && (
           <h1 className="p-5 mt-5 font-semibold text-black bg-white rounded-md m-auto">
             Search result Not Found
           </h1>
@@ -53,9 +51,7 @@ export default function Page({ params }: { params: { search: string } }) {
             <button
               className=" text-white float-right text-3xl p-2 hover:opacity-60  flex items-center justify-center mb-2
               me-5"
-              onClick={() =>
-                searchTerm == "watch%20avatar" ? route.push("/") : setVid("")
-              }
+              onClick={() => setVid("")}
             >
               <IoCloseCircleOutline />
             </button>
