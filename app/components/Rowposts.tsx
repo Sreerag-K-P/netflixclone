@@ -11,7 +11,7 @@ type prop = {
 const Rowposts = ({ title }: prop) => {
   const route = useRouter();
   return (
-    <div className="text-white px-10">
+    <div className="text-white px-3 md:px-10">
       <h2 className="my-3 font-extrabold">
         {title ? title : "Netflix originals"}
       </h2>

@@ -13,7 +13,7 @@ const Banner = () => {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute w-1/2 max-md:w-full flex flex-col justify-center h-full gap-10 px-10 font-sans z-10">
+      <div className="absolute w-1/2 max-md:w-full flex flex-col justify-center h-full gap-10 md:px-10 px-3 font-sans z-10">
         <div>
           <h1 className="font-extrabold text-7xl uppercase  tracking-tighter">
             {movies[0].Title}

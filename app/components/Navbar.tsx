@@ -9,7 +9,7 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="w-full sticky top-0  z-30 flex justify-between max-w-screen-2xl mx-auto items-center bg-black/5 px-9 h-16 ">
+    <div className="w-full sticky top-0  z-30 flex justify-between max-w-screen-2xl mx-auto items-center bg-black/5 md:px-9 px-3 h-16 ">
       <Link href="/" className=" max-sm:w-4/12">
         <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"

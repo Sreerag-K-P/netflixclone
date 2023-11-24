@@ -19,7 +19,7 @@ const Page = ({ params }: { params: { movie: string } }) => {
             <IoCloseCircleOutline />
           </button>
           <iframe
-            className="w-full sm:h-96 md:h-[40rem] xl:h-[60rem] 2xl:h-screen"
+            className="w-full h-96 md:h-[40rem] xl:h-[60rem] 2xl:h-screen"
             src={`https://www.youtube.com/embed/${vid}?autoplay=true`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
